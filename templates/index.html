@@ -2,30 +2,6 @@
 <html>
 <head>
     <title>Wine Cultivar Predictor</title>
-</head>
-<body>
-    <h2>Wine Cultivar Origin Prediction</h2>
-
-    <form method="POST">
-        Alcohol: <input type="number" step="any" name="alcohol"><br><br>
-        Malic Acid: <input type="number" step="any" name="malic_acid"><br><br>
-        Total Phenols: <input type="number" step="any" name="total_phenols"><br><br>
-        Flavanoids: <input type="number" step="any" name="flavanoids"><br><br>
-        Color Intensity: <input type="number" step="any" name="color_intensity"><br><br>
-        Proline: <input type="number" step="any" name="proline"><br><br>
-
-        <button type="submit">Predict</button>
-    </form>
-
-    {% if prediction %}
-        <h3>Predicted Result: {{ prediction }}</h3>
-    {% endif %}
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Wine Cultivar Predictor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
