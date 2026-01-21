@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Cultivar Predictor</title>
+</head>
+<body>
+    <h2>Wine Cultivar Origin Prediction</h2>
+
+    <form method="POST">
+        Alcohol: <input type="number" step="any" name="alcohol"><br><br>
+        Malic Acid: <input type="number" step="any" name="malic_acid"><br><br>
+        Total Phenols: <input type="number" step="any" name="total_phenols"><br><br>
+        Flavanoids: <input type="number" step="any" name="flavanoids"><br><br>
+        Color Intensity: <input type="number" step="any" name="color_intensity"><br><br>
+        Proline: <input type="number" step="any" name="proline"><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Cultivar Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        button {
+            background: #5c2d91;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        h2, h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>Wine Cultivar Origin Prediction</h2>
+
+    <form method="POST">
+        <input type="number" step="any" name="alcohol" placeholder="Alcohol" required>
+        <input type="number" step="any" name="malic_acid" placeholder="Malic Acid" required>
+        <input type="number" step="any" name="total_phenols" placeholder="Total Phenols" required>
+        <input type="number" step="any" name="flavanoids" placeholder="Flavanoids" required>
+        <input type="number" step="any" name="color_intensity" placeholder="Color Intensity" required>
+        <input type="number" step="any" name="proline" placeholder="Proline" required>
+
+        <button type="submit">Predict Cultivar</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</div>
+</body>
+</html>
