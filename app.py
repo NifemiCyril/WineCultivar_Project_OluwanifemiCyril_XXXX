@@ -32,11 +32,12 @@ def index():
             pred = model.predict(features_scaled)[0]
             prediction = f"Cultivar {pred + 1}"
 
-        except Exception as e:
+        except Exception:
             prediction = "Invalid input. Please enter valid numbers."
 
     return render_template("index.html", prediction=prediction)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
